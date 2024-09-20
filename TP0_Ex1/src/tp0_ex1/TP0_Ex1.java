@@ -18,7 +18,7 @@ public class TP0_Ex1 {
         sc = new Scanner(System.in);
         System.out.println("Bonjour, quel est votre prenom ?");
         prenom = sc.nextLine();
-        System.out.println(prenom);
+        System.out.print(prenom);
 
 
 
