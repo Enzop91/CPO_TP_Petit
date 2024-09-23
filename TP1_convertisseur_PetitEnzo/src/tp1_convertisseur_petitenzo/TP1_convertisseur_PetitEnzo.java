@@ -4,17 +4,29 @@
  */
 package tp1_convertisseur_petitenzo;
 
+import java.util.Scanner;
+
 /**
  *
  * @author enzop
  */
 public class TP1_convertisseur_PetitEnzo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+        Scanner scanner = new Scanner(System.in);
+          
+        System.out.print("Veuillez entrer une valeur reelle (type double) : ");
+        double valeurReelle = scanner.nextDouble();
+         
+        System.out.println("La valeur reelle saisie est : " + valeurReelle);
+       
+        
+        
+        scanner.close();
     }
-    
 }
+        
+    
+    
+
