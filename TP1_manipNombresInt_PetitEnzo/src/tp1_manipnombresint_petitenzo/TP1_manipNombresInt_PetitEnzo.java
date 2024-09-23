@@ -29,7 +29,26 @@ public class TP1_manipNombresInt_PetitEnzo {
         System.out.println("Le premier entier saisi est : " + premierEntier);
         System.out.println("Le second entier saisi est : " + secondEntier);
         
+        int somme = premierEntier + secondEntier;
+        int difference = premierEntier - secondEntier;
+        int produit = premierEntier * secondEntier;
+        
+        System.out.println("La somme des deux entiers est : " + somme);
+        System.out.println("La difference entre les deux entiers est : " + difference);
+        System.out.println("Le produit des deux entiers est : " + produit);
+        
+        if (secondEntier != 0) {  
+            int quotient = premierEntier / secondEntier;
+            int reste = premierEntier % secondEntier;
+           
+            System.out.println("Le quotient entier de la division de " + premierEntier + " par " + secondEntier + " est : " + quotient);
+            System.out.println("Le reste de la division euclidienne de " + premierEntier + " par " + secondEntier + " est : " + reste);
+        } else {
+            System.out.println("La division par zéro n'est pas possible.");
+        }
+   
         scanner.close();
+        
     }
 }
         
