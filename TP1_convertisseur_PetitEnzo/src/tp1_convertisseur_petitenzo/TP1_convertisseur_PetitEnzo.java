@@ -13,29 +13,29 @@ import java.util.Scanner;
 public class TP1_convertisseur_PetitEnzo {
 
      public static double CelciusVersKelvin(double tCelsius) {
-        // Conversion de Celsius vers Kelvin
+        
         return tCelsius + 273.15;
     }
    
      public static double KelvinVersCelcius(double tKelvin) {
-        return tKelvin - 273.15; // Conversion de Kelvin vers Celsius
+        return tKelvin - 273.15; 
     }
 
     public static double FarenheitVersCelcius(double tFarenheit) {
-        return (tFarenheit - 32) * 5 / 9; // Conversion de Fahrenheit vers Celsius
+        return (tFarenheit - 32) * 5 / 9; 
     }
 
     public static double CelciusVersFarenheit(double tCelsius) {
-        return (tCelsius * 9 / 5) + 32; // Conversion de Celsius vers Fahrenheit
+        return (tCelsius * 9 / 5) + 32; 
     }
 
     public static double KelvinVersFarenheit(double tKelvin) {
-        // Conversion : Kelvin -> Celsius -> Fahrenheit
+       
         return CelciusVersFarenheit(KelvinVersCelcius(tKelvin));
     }
 
     public static double FarenheitVersKelvin(double tFarenheit) {
-        // Conversion : Fahrenheit -> Celsius -> Kelvin
+       
         return CelciusVersKelvin(FarenheitVersCelcius(tFarenheit));
     }
     public static void main(String[] args) {
@@ -46,7 +46,7 @@ public class TP1_convertisseur_PetitEnzo {
         double valeurReelle = scanner.nextDouble();
         System.out.println("La valeur réelle saisie est : " + valeurReelle);
         
-        // Afficher le menu des conversions
+      
         System.out.println("Saisissez la conversion que vous souhaitez effectuer :");
         System.out.println("1) De Celsius vers Kelvin");
         System.out.println("2) De Kelvin vers Celsius");
@@ -55,13 +55,13 @@ public class TP1_convertisseur_PetitEnzo {
         System.out.println("5) De Kelvin vers Fahrenheit");
         System.out.println("6) De Fahrenheit vers Kelvin");
         
-        // Demander à l'utilisateur de choisir une option
+       
         System.out.print("Entrez votre choix (1-6) : ");
         int choix = scanner.nextInt();
 
         double resultat = 0;
 
-        // Effectuer la conversion en fonction du choix de l'utilisateur
+        
         switch (choix) {
             case 1:
                 System.out.print("Veuillez entrer la température en degrés Celsius : ");
