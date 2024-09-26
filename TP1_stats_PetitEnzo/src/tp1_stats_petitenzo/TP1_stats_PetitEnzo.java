@@ -4,6 +4,9 @@
  */
 package tp1_stats_petitenzo;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author enzop
@@ -15,11 +18,23 @@ public class TP1_stats_PetitEnzo {
      */
     public static void main(String[] args) {
        int[] tab = new int[6]; 
+       Scanner scanner = new Scanner(System.in);
+        Random generateurAleat = new Random();
 
-      
-        System.out.println("Valeurs du tableau représentant les faces d'un dé :");
-        for (int i = 0; i < tab.length; i++) {
-            System.out.println("Face " + (i + 1) + ": " + tab[i]);
+        System.out.print("Veuillez saisir un nombre entier m : ");
+        int m = scanner.nextInt();
+
+        for (int i = 0; i < m; i++) {
+            int nombreAleatoire = generateurAleat.nextInt(6);
+            tab[nombreAleatoire]++;
         }
+
+        System.out.println("Pourcentages des faces du dé après " + m + " tirages :");
+        for (int i = 0; i < tab.length; i++) {
+            double pourcentage = (tab[i] / (double) m) * 100;
+            System.out.printf("Face %d: %.2f%%\n", (i + 1), pourcentage);
+        }
+
+        scanner.close();
     }
 }
