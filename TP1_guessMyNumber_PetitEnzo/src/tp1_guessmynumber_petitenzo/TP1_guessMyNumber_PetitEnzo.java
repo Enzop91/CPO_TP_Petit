@@ -24,30 +24,30 @@ public class TP1_guessMyNumber_PetitEnzo {
             int n = generateurAleat.nextInt(100);
             System.out.println(n);
 }
-        Scanner scanner = new Scanner(System.in); // Création d'un scanner pour lire les entrées utilisateur
+        Scanner scanner = new Scanner(System.in); 
         
-        // Choix du niveau de difficulté
+        
         System.out.println("Choisissez votre niveau de difficulté : ");
         System.out.println("1) Facile");
         System.out.println("2) Normal");
         System.out.println("3) Difficile");
         int choixDifficulte = scanner.nextInt();
 
-        // Définition des paramètres du jeu selon le niveau de difficulté
-        int nombreAleatoire = generateurAleat.nextInt(101); // Générer un nombre aléatoire entre 0 et 100
+       
+        int nombreAleatoire = generateurAleat.nextInt(101); 
         int nombreMaxTentatives = 0;
         String messageAide = "";
 
         switch (choixDifficulte) {
-            case 1: // Facile
+            case 1: 
                 nombreMaxTentatives = 10;
                 messageAide = "Indice : Essayez de rester proche du nombre.";
                 break;
-            case 2: // Normal
+            case 2:
                 nombreMaxTentatives = 7;
                 messageAide = "Indice : Soyez attentif aux différences.";
                 break;
-            case 3: // Difficile
+            case 3: 
                 nombreMaxTentatives = 5;
                 messageAide = "Indice : Vous avez moins de tentatives, concentrez-vous !";
                 break;
@@ -60,16 +60,16 @@ public class TP1_guessMyNumber_PetitEnzo {
         System.out.println(messageAide);
         System.out.println("Devinez un nombre entre 0 et 100 :");
 
-        int nombreSaisi = -1; // Initialiser la variable pour stocker le nombre saisi par l'utilisateur
-        int compteurTentatives = 0; // Compteur de tentatives
+        int nombreSaisi = -1; 
+        int compteurTentatives = 0; 
 
-        // Boucle tant que l'utilisateur n'a pas trouvé le bon nombre et n'a pas épuisé ses tentatives
+       
         while (nombreSaisi != nombreAleatoire && compteurTentatives < nombreMaxTentatives) {
             System.out.print("Entrez votre nombre : ");
-            nombreSaisi = scanner.nextInt(); // Lire le nombre saisi par l'utilisateur
-            compteurTentatives++; // Incrémenter le compteur de tentatives
+            nombreSaisi = scanner.nextInt(); 
+            compteurTentatives++; 
 
-            // Comparer le nombre saisi avec le nombre aléatoire
+          
             if (nombreSaisi < nombreAleatoire) {
                 if (nombreAleatoire - nombreSaisi > 20) {
                     System.out.println("Vraiment trop petit !");
@@ -92,7 +92,7 @@ public class TP1_guessMyNumber_PetitEnzo {
             System.out.println("Désolé, vous avez épuisé vos tentatives. Le nombre était " + nombreAleatoire + ".");
         }
 
-        // Fermer le scanner
+        
         scanner.close();
     }
 }
