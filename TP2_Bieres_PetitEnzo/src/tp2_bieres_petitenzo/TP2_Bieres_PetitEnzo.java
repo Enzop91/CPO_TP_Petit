@@ -14,25 +14,29 @@ public class TP2_Bieres_PetitEnzo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    
-        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls",
-        7.0f ,"Dubuisson") ;
-        uneBiere.lireEtiquette();
-        BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6f, "Abbaye de Leffe");
-        BouteilleBiere autreBiere1 = new BouteilleBiere("Guinness", 4.2f, "St. James's Gate");
-        BouteilleBiere autreBiere2 = new BouteilleBiere("Chimay Bleue", 9.0f, "Abbaye de Scourmont");
-        BouteilleBiere autreBiere3 = new BouteilleBiere("Leffe Blonde",8.8f,"Abbaye de Leffe");
-        autreBiere.lireEtiquette();
-        autreBiere1.lireEtiquette();
-        autreBiere2.lireEtiquette();
-        autreBiere3.lireEtiquette();
-        boolean resultat = autreBiere.Decapsuler();
-        System.out.println("Décapsulage réussi : " + resultat);
-        
-        System.out.println(uneBiere);
-        System.out.println(autreBiere);
+        // Utilisation du constructeur
+        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des Trolls", 7.0, "Dubuisson");
+        uneBiere.lireEtiquette();  // Affichage de l'étiquette de la première bière
+       
+        BouteilleBiere uneSecondeBiere = new BouteilleBiere("Leffe", 6.6, "Abbaye de Leffe");
+        uneSecondeBiere.lireEtiquette();
+       
+        BouteilleBiere troisiemeBiere = new BouteilleBiere("Chimay Bleue", 9.0, "Abbaye de Scourmont");
+        troisiemeBiere.lireEtiquette();  // Affichage de l'étiquette de la troisième bière
+       
+        BouteilleBiere quatriemeBiere = new BouteilleBiere("Kwak", 8.4, "Brouwerij Bosteels");
+        quatriemeBiere.lireEtiquette();  // Affichage de l'étiquette de la quatrième bière
+       
+        BouteilleBiere cinquiemeBiere = new BouteilleBiere("Hoegaarden", 4.9, "Brouwerij van Hoegaarden");
+        cinquiemeBiere.lireEtiquette();
+       
+        uneBiere.Decapsuler();       // Décapsule première bière
+        troisiemeBiere.Decapsuler();
+       
+        System.out.println(uneBiere);        // Affiche l'état de la première bière
+        System.out.println(uneSecondeBiere);
+        System.out.println(troisiemeBiere);  
+        System.out.println(quatriemeBiere);  
+        System.out.println(cinquiemeBiere);
     }
-   
-        
-        
- }
+    }
