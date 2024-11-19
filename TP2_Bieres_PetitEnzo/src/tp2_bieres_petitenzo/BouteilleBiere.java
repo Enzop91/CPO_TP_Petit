@@ -9,40 +9,48 @@ package tp2_bieres_petitenzo;
  * @author enzop
  */
 public class BouteilleBiere {
- 
-    String nom;
-    float degreAlcool;
-    String brasserie;
-    boolean ouverte;        
-
-public BouteilleBiere(String unNom, float unDegre, String
-uneBrasserie) {
- nom = unNom;
- degreAlcool = unDegre;
- brasserie = uneBrasserie;
- ouverte = false;
-}
-
-    public void lireEtiquette() {
-        System.out.println("Bouteille de " + nom + " (" + degreAlcool + " degres)\nBrasserie : " + brasserie);
+    String nom;            
+    double degreAlcool;    
+    String brasserie;      
+    boolean ouverte;
+   
+    public BouteilleBiere() {
+        this.nom = "Inconnue";
+        this.degreAlcool = 0.0f;
+        this.brasserie = "Inconnue";
+        this.ouverte = false;
     }
- 
+   
+    // Constructeur avec trois paramètres
+    public BouteilleBiere(String unNom, double unDegre, String uneBrasserie) {
+        nom = unNom;
+        degreAlcool = unDegre;
+        brasserie = uneBrasserie;
+        ouverte = false;  // bouteille fermée par défaut
+    }
+   
+    public void lireEtiquette() {
+        System.out.println("Bouteille de " + nom + " (" + degreAlcool + " degrés)\nBrasserie : " + brasserie);
+    }
     public boolean Decapsuler() {
         if (!ouverte) {
-            ouverte = true;
+            ouverte = true;  // Ouvre la bouteille
+            System.out.println("La bière " + nom + " est maintenant ouverte.");
             return true;
         } else {
             System.out.println("Erreur : bière déjà ouverte.");
             return false;
         }
     }
-    @Override
+     @Override // écrase la méthode toString originelle
      public String toString() {
-        return "Nom : " + nom + "\n" +
-               "Degré d'alcool : " + degreAlcool + "%\n" +
-               "Brasserie : " + brasserie + "\n" +
-               "Ouverte : " + (ouverte ? "Oui" : "Non");
+        String chaine;
+        chaine = nom + " (" + degreAlcool + " degrés) Ouverte ? ";
+        if (ouverte == true) {
+            chaine += "oui";
+        } else {
+            chaine += "non";
+        }
+        return chaine;
     }
-
-}
-
+    }
